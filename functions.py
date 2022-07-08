@@ -1,8 +1,24 @@
 def input_abc():
-    a = int(input("Input a integer for 'a': "))
-    b = int(input("Input a integer for 'b': "))
-    c = int(input("Input a integer for 'c': "))
-    return (a, b, c)
+    aOK, bOK, cOK = False, False, False
+    while not aOK:
+        try:
+            a = float(input("Input a valid number for 'a': "))
+            aOK = True
+        except:
+            pass
+    while not bOK:
+        try:
+            b = float(input("Input a valid number for 'b': "))
+            bOK = True
+        except:
+            pass
+    while not cOK:
+        try:
+            c = float(input("Input a valid number for 'c': "))
+            cOK = True
+        except:
+            pass
+    return a, b, c
 
 
 def manual_check_y_n():

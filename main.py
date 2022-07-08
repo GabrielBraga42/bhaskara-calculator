@@ -54,6 +54,6 @@ print("For + : " + str(s1))
 print("For - : " + str(s2))
 
 if s1 < s2:
-    print(("S = {" + str(s1) + str(s2) + "}"))
+    print(("S = {" + str(s1) + ", " + str(s2) + "}"))
 else:
-    print(("S = {" + str(s2) + str(s1) + "}"))
+    print(("S = {" + str(s2) + ", " + str(s1) + "}"))
