@@ -5,8 +5,8 @@ correct1 = False
 while not correct1:
     correct2 = False
     while not correct2:
-        a, b, c = ft.input_abc()
-        ft.abc_to_manual_check(a, b, c)
+        a, b, c, delta = ft.input_abc()
+        ft.abc_to_manual_check(a, b, c, delta)
         if ft.manual_check_y_n():
             correct2 = True
         else:
@@ -14,7 +14,6 @@ while not correct1:
             print()
             print("Then, please re-input the values: ")
 
-    delta = (b ** 2) - 4 * a * c
     if delta < 0:
         print()
         print("Error! Delta cannot be a negative number. (Δ = " + str(delta) + ")")
@@ -30,9 +29,9 @@ while not correct1:
             print("Exiting.")
     else:
         correct1 = True
-
 print()
 print("With the following formula for bhaskara: ")
+print("Δ = " + str(delta))
 
 if b < 0:
     formula2 = ("X = " + "(" + str(b) + " ± √" + str(delta) + ") / " + "2")
@@ -47,8 +46,13 @@ print(formula2)
 print()
 print("We get the possible solutions: ")
 
-s1 = (b + (delta ** (1 / 2))) / (2 * a)
-s2 = (b - (delta ** (1 / 2))) / (2 * a)
+
+if delta < 0 or delta > 0:
+    s1 = (b + (delta ** (1 / 2))) / (2 * a)
+    s2 = (b - (delta ** (1 / 2))) / (2 * a)
+else:
+    s1, s2 = b, b
+
 
 print("For + : " + str(s1))
 print("For - : " + str(s2))

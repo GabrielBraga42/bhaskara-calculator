@@ -16,9 +16,10 @@ def input_abc():
         try:
             c = float(input("Input a valid number for 'c': "))
             cOK = True
+            delta = (b ** 2) - 4 * a * c
         except:
             pass
-    return a, b, c
+    return a, b, c, delta
 
 
 def manual_check_y_n():
@@ -33,7 +34,7 @@ def manual_check_y_n():
         return False
 
 
-def abc_to_manual_check(a, b, c):
+def abc_to_manual_check(a, b, c, delta):
     formula = "(" + str(a) + "x)²"
     if b < 0:
         formula += str(b) + "x"
@@ -45,4 +46,4 @@ def abc_to_manual_check(a, b, c):
     else:
         formula += "+" + str(c)
     print()
-    print("Is this correct?: " + str(formula) + " = 0")
+    print("Is this correct?: " + str(formula) + " = 0" + "   &   Δ = " + str(delta))
